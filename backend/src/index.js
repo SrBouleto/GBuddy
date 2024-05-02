@@ -1,4 +1,4 @@
-require("dotenv").config() // Import 'dotenv' module and configure it.
+require("dotenv").config(); // Import 'dotenv' module and configure it.
 const express = require("express"); // Import the 'express' module.
 const app = express(); // Initialize the express app.
 const PORT = process.env.PORT || 4322; // Use the secret PORT at '.env' or :4322: if not found.
@@ -9,5 +9,6 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, (e) => {
-    console.log(e);
+	if (!e) console.log(`Server is successfully listening on port ${PORT}!`); // Success.
+	else console.log(`An error has occurred while starting the server!`); // Failure.
 });
